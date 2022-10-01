@@ -6,15 +6,11 @@
 // TOTAL REFF YOU NEED IT. ( REMINDER : DON'T BE GREEDY!!! )
 // CHECK YOUR ACCOUNT.
 // DON'T GUARANTEE IF STILL WORKING OR NOT AFTER I UPDATE THIS SCRIPT.
-// LEGIT ? IDK BRO, I JUST MADE THIS SCRIPT BY LUV.
-// BUY ME SOME COFFEE https://saweria.co/khairulkrhacx
-
-
 <?php
-echo "[?]input refferal code\n";
+echo "[?] input refferal code\n";
 $ref = trim(fgets(STDIN));
 
-echo "[?]mau berapa banyak reff nya\n";
+echo "[?] mau berapa banyak reff nya\n";
 $jumlah = trim(fgets(STDIN));
 for($a=0;$a<$jumlah;$a++) {
 
@@ -33,12 +29,10 @@ $headers[] = 'Host: www.benzinga.com';
 $headers[] = 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:95.0) Gecko/20100101 Firefox/95.0';
 $headers[] = 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8';
 $headers[] = 'Accept-Language: id,en-US;q=0.7,en;q=0.3';
-//$headers[] = 'Accept-Encoding: gzip, deflate';
 $headers[] = 'Content-Type: application/x-www-form-urlencoded';
-//$headers[] = 'Content-Length: .strlen';
 $headers[] = 'Origin: https://www.benzinga.com';
 $headers[] = 'Connection: close';
-$headers[] = "Referer: https://www.benzinga.com/zing?mu=$ref";
+$headers[] = "Referer: https://www.benzinga.com/zing?mu=".$ref."";
 $headers[] = 'Cookie: _ga=GA1.2.342141291.1635294696; _gid=GA1.2.1011217677.1641456795';
 $headers[] = 'Upgrade-Insecure-Requests: 1';
 $headers[] = 'Sec-Fetch-Dest: document';
@@ -48,7 +42,7 @@ $headers[] = 'Sec-Fetch-User: ?1';
 curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 
 $result = curl_exec($ch);
-print "$email => menjadi refferal kamu, silahkan di cek.\n";
+echo "[!] $email => menjadi refferal kamu, silahkan di cek.\n";
 curl_close($ch);
 }
 
